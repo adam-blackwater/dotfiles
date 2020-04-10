@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 alias vv='python3.8 -m venv venv && . venv/bin/activate'
 alias va='. venv/bin/activate'
 alias vd='deactivate'
+alias sus='systemctl suspend'
 
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color?
  [Yes, No, Abort, Edit] "

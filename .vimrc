@@ -26,6 +26,7 @@ nnoremap <cr> :nohlsearch <cr>
 set dictionary+=/usr/share/dict/words
 set spellfile=~/.vim/spell/en.utf-8.add
 setlocal spell spelllang=en_gb
+set nospell
 " Movement
 nnoremap B ^            " move to beginning of line
 nnoremap E $            " move to end of line
