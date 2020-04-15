@@ -80,11 +80,12 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+#if [[ -n $SSH_CONNECTION ]]; then
+#  export EDITOR='vim'
+#else
+#  export EDITOR='mvim'
+#fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -97,11 +98,27 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-alias vv='python3.8 -m venv venv && . venv/bin/activate'
+
+
+# Aliases
+
+# Python 
+alias vv='python3.7 -m venv venv && . va'
 alias va='. venv/bin/activate'
 alias vd='deactivate'
-alias sus='systemctl suspend'
 
-export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color?
- [Yes, No, Abort, Edit] "
+# System
+alias sus='systemctl suspend'
+alias rm='rm -i'
+
+# Git 
+alias gs='git status'
+alias g='git'
+alias gd='git diff'
+alias gc='git checkout' 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/adam/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/adam/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/adam/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/adam/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
