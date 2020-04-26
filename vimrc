@@ -14,13 +14,14 @@ Plugin 'tpope/vim-commentary'
 Plugin 'dense-analysis/ale'
 
 " Visual 
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
 
 " Other
-Plugin 'nicwestvim-http'
+Plugin 'nicwest/vim-http'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'lervag/vimtex'
+Plugin 'mileszs/ack.vim'
 
-"Plugin 'lervag/vimtex'
 "Plugin 'syntastic'
 call vundle#end()            
 filetype plugin indent on   
@@ -58,15 +59,20 @@ map <leader>t :bNext <cr>
 map <leader>b :bprevious <cr>
 nnoremap <C-c> :bp\|bd # <cr>
 
+" Text formatting
+" set tw=80
+
+" nmap
 nmap \ dd                                       " nmap
 
-
+" vmap
 vmap \ U                                        "vmap
+
 "imap
 
 " Syntax 
 syntax enable                                   " enable syntax processing
-syntax on
+"syntax on
 
 " Tabs & Spaces
 set tabstop=4                                   " number of visual spaces per TAB
@@ -92,22 +98,29 @@ set foldmethod=indent                           " fold based on indent level
 
 " Work space
 let &winheight=&lines * 7 / 10                  "sets min num of lines of current window
+set splitbelow splitright
+noremap <silent> <C-Left> :vertical resize +3 <cr>
+noremap <silent> <C-Right> :vertical resize -3 <cr>
+noremap <silent> <C-Down> :resize -3 <cr>
+"map <leader>th <C-w>t<C-w>H
+"map <leader>tk <C-w>t<C-w>K
+"map <leader>tt :terminal <cr>
 
 " Vimtex
-"let g:vimtex_compiler_latexmk = {
-"                        \ 'backend' : 'jobs',
-"                        \ 'background' : 1,
-"                        \ 'build_dir' : 'build',
-"                        \ 'callback' : 1,
-"                        \ 'continuous' : 1,
-"                        \ 'executable' : 'latexmk',
-"                        \ 'options' : [
-"                        \   '-verbose',
-"                        \   '-file-line-error',
-"                        \   '-synctex=1',
-"                        \   '-interaction=nonstopmode',
-"                        \  ],
-"                        \ }
+let g:vimtex_compiler_latexmk = {
+                        \ 'backend' : 'jobs',
+                        \ 'background' : 1,
+                        \ 'build_dir' : 'build',
+                        \ 'callback' : 1,
+                        \ 'continuous' : 1,
+                        \ 'executable' : 'latexmk',
+                        \ 'options' : [
+                        \   '-verbose',
+                        \   '-file-line-error',
+                        \   '-synctex=1',
+                        \   '-interaction=nonstopmode',
+                        \  ],
+                        \ }
 
 " Syntastic
 "set statusline+=%#warningmsg#
@@ -124,7 +137,7 @@ let &winheight=&lines * 7 / 10                  "sets min num of lines of curren
 
 " Update sign column every quarter second to make vim-gitgutter signs update
 " at shorter intervals 
-"set updatetime=250
+set updatetime=250
 
 " Git-Fugative 
 " Show commits for every source line git-fugative
