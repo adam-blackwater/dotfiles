@@ -103,7 +103,7 @@ export EDITOR='vim'
 # Aliases
 
 # Python 
-alias vv='python3.7 -m venv venv && . va'
+alias vv='python3 -m venv venv && va'
 alias va='. venv/bin/activate'
 alias vd='deactivate'
 
@@ -112,13 +112,8 @@ alias sus='systemctl suspend'
 alias rm='rm -i'
 
 # Git 
-alias gs='git status'
 alias g='git'
 alias gd='git diff'
-alias gc='git checkout' 
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/adam/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/adam/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/adam/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/adam/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+alias gc='git clone'
+alias gs='git status'
+alias gco='git checkout' 
