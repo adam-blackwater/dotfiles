@@ -10,7 +10,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Editing 
-Plugin 'tpope/vim-commentary'
+" Plugin 'tpope/vim-commentary'
 Plugin 'dense-analysis/ale'
 
 " Visual 
@@ -139,6 +139,11 @@ let g:vimtex_compiler_latexmk = {
 " at shorter intervals 
 set updatetime=250
 
+set undofile " maintain undo history between session
+set undodir=~/.vim/undo
+
 " Git-Fugative 
 " Show commits for every source line git-fugative
-nnoremap <Leader>gb :Gblame<CR>  " git blame
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>ga :Git add<CR>
+nnoremap <Leader>gs :Git status <CR>
