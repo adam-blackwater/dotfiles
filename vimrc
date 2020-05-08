@@ -97,11 +97,12 @@ nnoremap <space> za                             " space open/closes folds
 set foldmethod=indent                           " fold based on indent level
 
 " Work space
-let &winheight=&lines * 7 / 10                  "sets min num of lines of current window
+" let &winheight=&lines * 7 / 10                  "sets min num of lines of current window
 set splitbelow splitright
-noremap <silent> <C-Left> :vertical resize +3 <cr>
-noremap <silent> <C-Right> :vertical resize -3 <cr>
-noremap <silent> <C-Down> :resize -3 <cr>
+noremap <silent> <C-h> :vertical resize -3 <cr>
+noremap <silent> <C-l> :vertical resize +3 <cr>
+noremap <silent> <C-j> :resize -3 <cr>
+noremap <silent> <C-k> :resize +3 <cr>
 "map <leader>th <C-w>t<C-w>H
 "map <leader>tk <C-w>t<C-w>K
 "map <leader>tt :terminal <cr>
