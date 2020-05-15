@@ -144,7 +144,6 @@ set undofile " maintain undo history between session
 set undodir=~/.vim/undo
 
 " Git-Fugative 
-" Show commits for every source line git-fugative
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>ga :Git add<CR>
 nnoremap <Leader>gs :Git status <CR>
