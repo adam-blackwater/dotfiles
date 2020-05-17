@@ -1,0 +1,7 @@
+[user]
+	email = me@adamblackwater.com
+	name = Adam Blackwater
+[commit]
+	template = /home/adam/.config/gitconfig/gitmessage
+[core]
+	excludesfile = /home/adam/.config/gitconfig/gitignore-global

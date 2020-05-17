@@ -1,7 +1,0 @@
-[user]
-	email = me@adamblackwater.com
-	name = Adam Blackwater
-[commit]
-	template = /home/adam/.gitmessage
-[core]
-	excludesfile = /home/adam/.gitignore-global
