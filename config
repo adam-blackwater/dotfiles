@@ -187,12 +187,8 @@ bar {
         # position top
 
         colors {
-                # background #FF0000 
-                # active_workspace  #000000 #FF0000 #000000 
-                # background #232323 
-                # statusline #DCDCDC 
-                # focused_separator #2E0854 
-                # inactive_workspace #2E0854 
+                focused_workspace #006633 #0c1605 
+                background #232323 
         }
 }
 
