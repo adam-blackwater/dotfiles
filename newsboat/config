@@ -1,0 +1,13 @@
+auto-reload yes
+reload-time 30
+
+bind-key j down
+bind-key k up
+browser w3m
+
+color info white color233 bold
+color listfocus yellow color55 bold
+color listfocus_unread magenta color55 bold
+
+download-path "~/Podcasts/%n"
+download-filename-format "%t.%e"
