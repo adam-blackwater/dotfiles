@@ -11,3 +11,5 @@ color listfocus_unread magenta color55 bold
 
 download-path "~/Podcasts/%n"
 download-filename-format "%t.%e"
+
+player "cmus-remote -l"
