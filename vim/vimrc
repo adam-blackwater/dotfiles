@@ -1,39 +1,33 @@
-set nocompatible        " be iMproved, required
-
 " Plugins 
 set rtp+=~/.vim/bundle/Vundle.vim           " add Vundle to runtime path 
+
 call vundle#begin()                         
-Plugin 'VundleVim/Vundle.vim'                    
-
-" Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-
-" Editing 
-" Plugin 'tpope/vim-commentary'
-Plugin 'dense-analysis/ale'
-
-" Visual 
-"Plugin 'Yggdroot/indentLine'
-
-" Other
-Plugin 'nicwest/vim-http'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'lervag/vimtex'
-Plugin 'mileszs/ack.vim'
-"Plugin 'dracula/vim',{'name':'dracula'}
-"Plugin 'challenger-deep-theme/vim', {'name': 'challenger-deep-theme'}
-
-"Plugin 'syntastic'
+    Plugin 'VundleVim/Vundle.vim'                    
+    " Git
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'airblade/vim-gitgutter'
+    " Editing 
+    " Plugin 'tpope/vim-commentary'
+    Plugin 'dense-analysis/ale'
+    " Visual 
+    " Plugin 'Yggdroot/indentLine'
+    " Other
+    Plugin 'nicwest/vim-http'
+    Plugin 'ctrlpvim/ctrlp.vim'
+    Plugin 'lervag/vimtex'
+    Plugin 'mileszs/ack.vim'
+    " Plugin 'syntastic'
 call vundle#end()            
-filetype plugin indent on   
 
-" ctrlp
-let g:ctrlp_map = '<c-p>'
+" CtrlP
+let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_show_hidden=1
+
+inoremap jj <esc>
+let mapleader= ' '
 
 " colours
-" let g:gruvbox_guisp_fallback = "bg"             " turns on spelling highlighting
 colorscheme challenger_deep
 
 " Search
@@ -42,39 +36,19 @@ set incsearch                                   " highlight with each key stroke
 nnoremap <cr> :nohlsearch <cr>
 
 " Spell
-set dictionary+=/usr/share/dict/words
+set dictionary+=/usr/share/dict/cracklib-small
 set spellfile=~/.vim/spell/en.utf-8.add
-setlocal spell spelllang=en_gb
+setloca spell spelllang=en_gb
 set nospell
 
-" Movement
-nnoremap B ^                                    " move to beginning of line
-nnoremap E $                                    " move to end of line
-nnoremap $ <nop>                                " unbind
-nnoremap ^ <nop>                                " unbind
-nnoremap gV `[v`]                               " highlight last inserted text
-inoremap jj <esc>
-let mapleader= ' '
-
 " Buffer Switching
-map <leader>t :bNext <cr>
-map <leader>b :bprevious <cr>
+map <leader>nn :bNext <cr>
+map <leader>bb :bprevious <cr>
 nnoremap <C-c> :bp\|bd # <cr>
 
-" Text formatting
-" set tw=80
-
-" nmap
-" nmap \ dd                                       " nmap
-
-" vmap
-vmap \ U                                        "vmap
-
-"imap
 
 " Syntax 
 syntax enable                                   " enable syntax processing
-"syntax on
 
 " Tabs & Spaces
 set tabstop=4                                   " number of visual spaces per TAB
@@ -83,7 +57,7 @@ set expandtab                                   " tabs are spaces
 set shiftwidth=4
 
 " Visual 
-"set relativenumber                             " :set rnu! == toggle relative number
+set relativenumber                             " :set rnu! == toggle relative number
 set number
 set showcmd
 set wildmenu                                    " visual autocomplete for command menu
@@ -91,35 +65,38 @@ filetype indent on                              " load filetype-specific indent 
 set lazyredraw                                  " redraw only when we need to
 set showmatch                                   " highlight matching [{()}]
 set cursorline
+set laststatus=2
+set updatetime=250 " set update time in milliseconds. git-gutter redraws signs based on this time
 
 " Git-Fugative 
 nnoremap <leader>gb :Git blame <cr>
 nnoremap <leader>gp :Git push <cr>
 nnoremap <leader>ga :Git add % <cr>
 nnoremap <leader>gs :Git <cr>
-nnoremap <leader>gc :Git commit <cr>
+nnoremap <leader>gcc :Git commit <cr>
 nnoremap <leader>gbb :Git branch <cr>
 nnoremap <leader>gd :Git diff <cr>
 nnoremap <leader>gm :Git mergetool <cr>
-nnoremap <leader>gc :Git checkout 
+nnoremap <leader>gcb :Git checkout  
+nnoremap <leader>gnb :Git checkout -b 
 
 " Folding 
 set foldenable                                  " enable folding
 set foldlevelstart=10                           " open most folds by default
 set foldnestmax=10                              " 10 nested fold max
-nnoremap <space>za                             " space open/closes folds
+nnoremap ff za
 set foldmethod=indent                           " fold based on indent level
 
 " Work space
-" let &winheight=&lines * 7 / 10                  "sets min num of lines of current window
 set splitbelow splitright
-noremap <silent> <C-h> :vertical resize -3 <cr>
-noremap <silent> <C-l> :vertical resize +3 <cr>
-noremap <silent> <C-j> :resize -3 <cr>
-noremap <silent> <C-k> :resize +3 <cr>
-"map <leader>th <C-w>t<C-w>H
-"map <leader>tk <C-w>t<C-w>K
-"map <leader>tt :terminal <cr>
+noremap <silent> <C-S-h> :vertical resize -3 <cr>
+noremap <silent> <C-S-l> :vertical resize +3 <cr>
+noremap <silent> <C-S-j> :resize -3 <cr>
+noremap <silent> <C-S-k> :resize +3 <cr>
+map <leader>tt :terminal <cr>
+map <leader>ss :vs <cr>
+map <leader>hs :split <cr>
+map <leader>qq :quit <cr>
 
 " Vimtex
 let g:vimtex_view_method = 'zathura'
@@ -138,23 +115,4 @@ let g:vimtex_compiler_latexmk = {
                         \  ],
                         \ }
 
-" Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-" Flake8
-"let g:syntastic_python_checkers = ['pylint']
-"let g:syntastic_aggregate_errors = 1
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
-" Update sign column every quarter second to make vim-gitgutter signs update
-" at shorter intervals 
-"set updatetime=250
-
-"set undofile " maintain undo history between session
-"set undodir=~/.vim/undo
 

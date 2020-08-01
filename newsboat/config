@@ -13,3 +13,6 @@ download-path "~/Podcasts/%n"
 download-filename-format "%t.%e"
 
 player "cmus-remote -l"
+podcast-auto-enqueue no
+
+text-width 120

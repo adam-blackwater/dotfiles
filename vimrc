@@ -33,7 +33,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " colours
-" let g:gruvbox_guisp_fallback = "bg"             " turns on spelling highlighting
+" let g:gruvbox_guisp_fallback = \"bg"             " turns on spelling highlighting
 colorscheme challenger_deep
 
 " Search
@@ -102,7 +102,8 @@ nnoremap <leader>gcc :Git commit <cr>
 nnoremap <leader>gbb :Git branch <cr>
 nnoremap <leader>gd :Git diff <cr>
 nnoremap <leader>gm :Git mergetool <cr>
-nnoremap <leader>gc :Git checkout 
+nnoremap <leader>gcb :Git checkout  
+nnoremap <leader>gnb :Git checkout -b 
 
 " Folding 
 set foldenable                                  " enable folding
@@ -114,10 +115,10 @@ set foldmethod=indent                           " fold based on indent level
 " Work space
 " let &winheight=&lines * 7 / 10                  "sets min num of lines of current window
 set splitbelow splitright
-noremap <silent> <C-h> :vertical resize -3 <cr>
-noremap <silent> <C-l> :vertical resize +3 <cr>
-noremap <silent> <C-j> :resize -3 <cr>
-noremap <silent> <C-k> :resize +3 <cr>
+noremap <silent> <C-S-h> :vertical resize -3 <cr>
+noremap <silent> <C-S-l> :vertical resize +3 <cr>
+noremap <silent> <C-S-j> :resize -3 <cr>
+noremap <silent> <C-S-k> :resize +3 <cr>
 "map <leader>th <C-w>t<C-w>H
 "map <leader>tk <C-w>t<C-w>K
 map <leader>tt :terminal <cr>
@@ -158,4 +159,3 @@ set updatetime=250
 
 "set undofile " maintain undo history between session
 "set undodir=~/.vim/undo
-
