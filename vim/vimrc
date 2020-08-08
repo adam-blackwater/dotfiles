@@ -1,22 +1,20 @@
 " Plugins 
 set rtp+=~/.vim/bundle/Vundle.vim           " add Vundle to runtime path 
+set rtp+=~/Code/emtiv
+filetype plugin on
 
 call vundle#begin()                         
     Plugin 'VundleVim/Vundle.vim'                    
-    " Git
     Plugin 'tpope/vim-fugitive'
     Plugin 'airblade/vim-gitgutter'
-    " Editing 
     " Plugin 'tpope/vim-commentary'
     Plugin 'dense-analysis/ale'
-    " Visual 
     " Plugin 'Yggdroot/indentLine'
-    " Other
     Plugin 'nicwest/vim-http'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'lervag/vimtex'
-    Plugin 'mileszs/ack.vim'
     " Plugin 'syntastic'
+    Plugin 'mileszs/ack.vim'
 call vundle#end()            
 
 " CtrlP
@@ -26,6 +24,8 @@ let g:ctrlp_show_hidden=1
 
 inoremap jj <esc>
 let mapleader= ' '
+nnoremap <leader>rc :vsplit ~/.vim/vimrc <cr>
+nnoremap <leader>rs :source ~/.vim/vimrc <cr>
 
 " colours
 colorscheme challenger_deep
@@ -38,7 +38,7 @@ nnoremap <cr> :nohlsearch <cr>
 " Spell
 set dictionary+=/usr/share/dict/cracklib-small
 set spellfile=~/.vim/spell/en.utf-8.add
-setloca spell spelllang=en_gb
+setlocal spell spelllang=en_gb
 set nospell
 
 " Buffer Switching
@@ -99,6 +99,7 @@ map <leader>hs :split <cr>
 map <leader>qq :quit <cr>
 
 " Vimtex
+let g:tex_flavor = 'latex'
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_latexmk = {
                         \ 'backend' : 'jobs',
@@ -115,4 +116,4 @@ let g:vimtex_compiler_latexmk = {
                         \  ],
                         \ }
 
-
+iabbrev ssig -- <cr>Kind regards,<cr><cr>Adam Blackwater<cr>
